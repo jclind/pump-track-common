@@ -23,7 +23,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.firestore = exports.tracker = void 0;
+exports.useAuthState = exports.firestore = exports.tracker = void 0;
 // export * as auth from './services/auth'
 exports.tracker = __importStar(require("./services/tracker"));
 exports.firestore = __importStar(require("./services/firestore"));
+exports.useAuthState = __importStar(require("./hooks/useAuthState"));
