@@ -1,5 +1,5 @@
 {
-  "version": "0.0.23",
+  "version": "0.0.18",
   "name": "pump-track-common",
   "devDependencies": {
     "@types/react": "^18.2.37",
@@ -16,11 +16,7 @@
     "react-native": "^0.72.6"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./hooks": "./src/hooks"
+    "./": "./dist/"
   },
   "typesVersions": {
     "*": {
