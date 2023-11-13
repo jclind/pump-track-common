@@ -1,0 +1,10 @@
+import { UserProfileDataType } from '../types';
+export declare const signupWithGoogle: () => Promise<void>;
+export declare const logout: () => Promise<void>;
+export declare const addUsername: (uid: string, username: string) => Promise<false | undefined>;
+export declare const checkUsernameExists: (username: string) => Promise<boolean | undefined>;
+export declare const updateUsername: (uid: string, username: string) => Promise<void>;
+export declare const getUserData: (username: string) => Promise<UserProfileDataType | null>;
+export declare const getUsername: () => Promise<string | undefined>;
+export declare const getUIDFromUsername: (username: string) => Promise<any>;
+export declare const updateUserActivity: () => Promise<void>;

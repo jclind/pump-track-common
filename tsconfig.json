@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "pump-track-common/*": ["src/*"],
+      "pump-track-common/hooks/*": ["src/hooks/*"]
+    },
+    "target": "esnext",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*", "types/**/*", "index.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
