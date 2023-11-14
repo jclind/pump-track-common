@@ -7,7 +7,10 @@ import { default as NativeToast } from 'react-native-toast-message'
 export const PlatformError = (error: any) => {
   const message = error.message || error
   console.log(error)
-  if (Platform.OS === 'ios' || Platform.OS === 'android') {
+  if (
+    typeof Platform !== 'undefined' &&
+    (Platform.OS === 'ios' || Platform.OS === 'android')
+  ) {
     // Ensure that 'NativeToast' is defined before calling 'show'
     if (NativeToast) {
       NativeToast.show({ type: 'error', text1: 'Error', text2: message })

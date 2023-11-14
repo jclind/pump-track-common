@@ -12,7 +12,8 @@ const react_native_toast_message_1 = __importDefault(require("react-native-toast
 const PlatformError = (error) => {
     const message = error.message || error;
     console.log(error);
-    if (react_native_1.Platform.OS === 'ios' || react_native_1.Platform.OS === 'android') {
+    if (typeof react_native_1.Platform !== 'undefined' &&
+        (react_native_1.Platform.OS === 'ios' || react_native_1.Platform.OS === 'android')) {
         // Ensure that 'NativeToast' is defined before calling 'show'
         if (react_native_toast_message_1.default) {
             react_native_toast_message_1.default.show({ type: 'error', text1: 'Error', text2: message });
