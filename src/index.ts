@@ -1,4 +1,4 @@
-import { setFirebaseConfig } from './services/firestore'
+import { FirebaseInstance, initializeFirebase } from './services/firestore'
 import { ENVIRONMENT_KEY_TYPE, FirebaseConfig } from './types'
 
 // export * as auth from './services/auth'
@@ -8,12 +8,21 @@ export * as firestore from './services/firestore'
 
 export let ENVIRONMENT_KEY: ENVIRONMENT_KEY_TYPE = null
 
-export const pumpTrackSetup = (
+export const pumpTrackSetup = async (
   firebaseConfig: FirebaseConfig,
   environmentKey: ENVIRONMENT_KEY_TYPE
-) => {
-  setFirebaseConfig(firebaseConfig)
-  ENVIRONMENT_KEY = environmentKey
+): Promise<FirebaseInstance> => {
+  const firebaseInstance: FirebaseInstance | null =
+    initializeFirebase(firebaseConfig)
+
+  if (firebaseInstance !== null) {
+    ENVIRONMENT_KEY = environmentKey
+    return firebaseInstance
+  } else {
+    throw new Error(
+      'Firebase: something went wrong, make sure to initialize the app correctly'
+    )
+  }
 }
 
 // export * as useAuthState from './hooks/useAuthState'

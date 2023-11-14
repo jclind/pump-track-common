@@ -8,7 +8,7 @@ import { Functions, getFunctions } from 'firebase/functions'
 import { PlatformError } from 'pump-track-common/util/PlatformError'
 import { FirebaseConfig } from 'pump-track-common/types'
 
-type FirebaseInstance = {
+export type FirebaseInstance = {
   app: firebase.app.App
   firebaseFunctions: Functions
   auth: Auth
@@ -24,16 +24,19 @@ export function setFirebaseConfig(config: FirebaseConfig) {
   firebaseConfig = config
 }
 
-export function initializeFirebase() {
-  if (!firebaseConfig) {
+export function initializeFirebase(
+  config: FirebaseConfig
+): FirebaseInstance | null {
+  if (!config) {
     const errorMessage =
       'Firebase configuration not set. Call setFirebaseConfig first.'
     console.error(errorMessage)
-    return PlatformError(errorMessage)
+    PlatformError(errorMessage)
+    return null
   }
 
   // Initialize Firebase
-  const app = firebase.initializeApp(firebaseConfig)
+  const app = firebase.initializeApp(config)
   const firebaseFunctions = getFunctions()
   const auth = getAuth(app)
   const storage = getStorage()
@@ -48,6 +51,8 @@ export function initializeFirebase() {
     db,
     analytics,
   }
+
+  return firebaseInstance
 }
 
 export function getFirebaseInstance(): FirebaseInstance {

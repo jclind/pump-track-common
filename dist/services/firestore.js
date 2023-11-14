@@ -18,14 +18,15 @@ function setFirebaseConfig(config) {
     firebaseConfig = config;
 }
 exports.setFirebaseConfig = setFirebaseConfig;
-function initializeFirebase() {
-    if (!firebaseConfig) {
+function initializeFirebase(config) {
+    if (!config) {
         const errorMessage = 'Firebase configuration not set. Call setFirebaseConfig first.';
         console.error(errorMessage);
-        return (0, PlatformError_1.PlatformError)(errorMessage);
+        (0, PlatformError_1.PlatformError)(errorMessage);
+        return null;
     }
     // Initialize Firebase
-    const app = app_1.default.initializeApp(firebaseConfig);
+    const app = app_1.default.initializeApp(config);
     const firebaseFunctions = (0, functions_1.getFunctions)();
     const auth = (0, auth_1.getAuth)(app);
     const storage = (0, storage_1.getStorage)();
@@ -39,6 +40,7 @@ function initializeFirebase() {
         db,
         analytics,
     };
+    return firebaseInstance;
 }
 exports.initializeFirebase = initializeFirebase;
 function getFirebaseInstance() {

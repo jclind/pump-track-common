@@ -6,7 +6,7 @@ import { Analytics } from 'firebase/analytics';
 import { Auth } from 'firebase/auth';
 import { Functions } from 'firebase/functions';
 import { FirebaseConfig } from 'pump-track-common/types';
-type FirebaseInstance = {
+export type FirebaseInstance = {
     app: firebase.app.App;
     firebaseFunctions: Functions;
     auth: Auth;
@@ -15,6 +15,5 @@ type FirebaseInstance = {
     analytics: Analytics;
 };
 export declare function setFirebaseConfig(config: FirebaseConfig): void;
-export declare function initializeFirebase(): Promise<void> | undefined;
+export declare function initializeFirebase(config: FirebaseConfig): FirebaseInstance | null;
 export declare function getFirebaseInstance(): FirebaseInstance;
-export {};

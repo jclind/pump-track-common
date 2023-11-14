@@ -29,9 +29,15 @@ const firestore_1 = require("./services/firestore");
 exports.tracker = __importStar(require("./services/tracker"));
 exports.firestore = __importStar(require("./services/firestore"));
 exports.ENVIRONMENT_KEY = null;
-const pumpTrackSetup = (firebaseConfig, environmentKey) => {
-    (0, firestore_1.setFirebaseConfig)(firebaseConfig);
-    exports.ENVIRONMENT_KEY = environmentKey;
+const pumpTrackSetup = async (firebaseConfig, environmentKey) => {
+    const firebaseInstance = (0, firestore_1.initializeFirebase)(firebaseConfig);
+    if (firebaseInstance !== null) {
+        exports.ENVIRONMENT_KEY = environmentKey;
+        return firebaseInstance;
+    }
+    else {
+        throw new Error('Firebase: something went wrong, make sure to initialize the app correctly');
+    }
 };
 exports.pumpTrackSetup = pumpTrackSetup;
 // export * as useAuthState from './hooks/useAuthState'
