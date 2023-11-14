@@ -1,5 +1,4 @@
-import { FirebaseInstance } from './services/firestore';
-import { ENVIRONMENT_KEY_TYPE, FirebaseConfig } from './types';
+import { ENVIRONMENT_KEY_TYPE, FirebaseConfig, FirebaseInstance } from './types';
 export * as tracker from './services/tracker';
 export * as firestore from './services/firestore';
 export declare let ENVIRONMENT_KEY: ENVIRONMENT_KEY_TYPE;

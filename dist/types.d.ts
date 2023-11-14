@@ -1,3 +1,9 @@
+import firebase from 'firebase/compat/app';
+import { Analytics } from 'firebase/analytics';
+import { Auth } from 'firebase/auth';
+import { Firestore } from 'firebase/firestore';
+import { Functions } from 'firebase/functions';
+import { FirebaseStorage } from 'firebase/storage';
 export type WorkoutDataType = {
     id: string;
     name: string;
@@ -72,5 +78,13 @@ export type FirebaseConfig = {
     messagingSenderId: string;
     appId: string;
     measurementId: string;
+};
+export type FirebaseInstance = {
+    app: firebase.app.App;
+    firebaseFunctions: Functions;
+    auth: Auth;
+    storage: FirebaseStorage;
+    db: Firestore;
+    analytics: Analytics;
 };
 export type ENVIRONMENT_KEY_TYPE = 'web' | 'mobile' | null;

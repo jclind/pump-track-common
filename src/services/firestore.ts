@@ -6,16 +6,7 @@ import { Analytics, getAnalytics } from 'firebase/analytics'
 import { Auth, getAuth } from 'firebase/auth'
 import { Functions, getFunctions } from 'firebase/functions'
 import { PlatformError } from 'pump-track-common/util/PlatformError'
-import { FirebaseConfig } from 'pump-track-common/types'
-
-export type FirebaseInstance = {
-  app: firebase.app.App
-  firebaseFunctions: Functions
-  auth: Auth
-  storage: FirebaseStorage
-  db: Firestore
-  analytics: Analytics
-}
+import { FirebaseConfig, FirebaseInstance } from 'pump-track-common/types'
 
 let firebaseConfig: FirebaseConfig | null = null
 let firebaseInstance: FirebaseInstance | null = null

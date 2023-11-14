@@ -1,5 +1,5 @@
-import { FirebaseInstance, initializeFirebase } from './services/firestore'
-import { ENVIRONMENT_KEY_TYPE, FirebaseConfig } from './types'
+import { initializeFirebase } from './services/firestore'
+import { ENVIRONMENT_KEY_TYPE, FirebaseConfig, FirebaseInstance } from './types'
 
 // export * as auth from './services/auth'
 export * as tracker from './services/tracker'
