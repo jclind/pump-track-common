@@ -23,9 +23,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlatformError = exports.firestore = exports.tracker = void 0;
+exports.PlatformError = exports.pumpTrackSetup = exports.ENVIRONMENT_KEY = exports.firestore = exports.tracker = void 0;
+const firestore_1 = require("./services/firestore");
 // export * as auth from './services/auth'
 exports.tracker = __importStar(require("./services/tracker"));
 exports.firestore = __importStar(require("./services/firestore"));
+exports.ENVIRONMENT_KEY = null;
+const pumpTrackSetup = (firebaseConfig, environmentKey) => {
+    (0, firestore_1.setFirebaseConfig)(firebaseConfig);
+    exports.ENVIRONMENT_KEY = environmentKey;
+};
+exports.pumpTrackSetup = pumpTrackSetup;
 // export * as useAuthState from './hooks/useAuthState'
 exports.PlatformError = __importStar(require("./util/PlatformError"));

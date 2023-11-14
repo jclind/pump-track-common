@@ -1,1 +1,1 @@
-export declare const PlatformError: (error: any) => void;
+export declare const PlatformError: (error: any) => Promise<void>;

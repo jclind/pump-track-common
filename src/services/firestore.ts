@@ -6,16 +6,8 @@ import { Analytics, getAnalytics } from 'firebase/analytics'
 import { Auth, getAuth } from 'firebase/auth'
 import { Functions, getFunctions } from 'firebase/functions'
 import { PlatformError } from 'pump-track-common/util/PlatformError'
+import { FirebaseConfig } from 'pump-track-common/types'
 
-type FirebaseConfig = {
-  apiKey: string
-  authDomain: string
-  projectId: string
-  storageBucket: string
-  messagingSenderId: string
-  appId: string
-  measurementId: string
-}
 type FirebaseInstance = {
   app: firebase.app.App
   firebaseFunctions: Functions
