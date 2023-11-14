@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "paths": {
-      "pump-track-common/*": ["src/*"]
-    },
     "target": "esnext",
     "module": "commonjs",
     "declaration": true,

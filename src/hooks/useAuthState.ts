@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
 import { User } from 'firebase/auth'
-import { getFirebaseInstance } from 'pump-track-common/services/firestore'
-import {
-  getUsername,
-  updateUserActivity,
-} from 'pump-track-common/services/auth'
-import { PUMP_TRACK_LS_USERNAME } from 'pump-track-common/services/PUMP_TRACK_LS'
+import { getFirebaseInstance } from 'src/services/firestore'
+import { getUsername, updateUserActivity } from 'src/services/auth'
+import { PUMP_TRACK_LS_USERNAME } from 'src/services/PUMP_TRACK_LS'
 
 interface AuthState {
   user: User | null

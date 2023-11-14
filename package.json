@@ -19,9 +19,6 @@
   "optionalDependencies": {
     "react-native": "^0.72.6"
   },
-  "exports": {
-    "./": "./dist/"
-  },
   "typesVersions": {
     "*": {
       "*": [

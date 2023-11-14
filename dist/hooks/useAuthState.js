@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useAuthState = void 0;
 const react_1 = require("react");
-const firestore_1 = require("pump-track-common/services/firestore");
-const auth_1 = require("pump-track-common/services/auth");
-const PUMP_TRACK_LS_1 = require("pump-track-common/services/PUMP_TRACK_LS");
+const firestore_1 = require("src/services/firestore");
+const auth_1 = require("src/services/auth");
+const PUMP_TRACK_LS_1 = require("src/services/PUMP_TRACK_LS");
 const useAuthState = () => {
     const [user, setUser] = (0, react_1.useState)(null);
     const [loading, setLoading] = (0, react_1.useState)(true);

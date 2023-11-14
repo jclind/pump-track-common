@@ -11,7 +11,7 @@ const firestore_1 = require("firebase/firestore");
 const analytics_1 = require("firebase/analytics");
 const auth_1 = require("firebase/auth");
 const functions_1 = require("firebase/functions");
-const PlatformError_1 = require("pump-track-common/util/PlatformError");
+const PlatformError_1 = require("src/util/PlatformError");
 let firebaseConfig = null;
 let firebaseInstance = null;
 function setFirebaseConfig(config) {

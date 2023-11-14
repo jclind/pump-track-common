@@ -5,8 +5,8 @@ const auth_1 = require("firebase/auth");
 const firestore_1 = require("firebase/firestore");
 const PUMP_TRACK_LS_1 = require("./PUMP_TRACK_LS");
 const functions_1 = require("firebase/functions");
-const PlatformError_1 = require("pump-track-common/util/PlatformError");
 const firestore_2 = require("./firestore");
+const PlatformError_1 = require("src/util/PlatformError");
 const { auth, db, firebaseFunctions } = (0, firestore_2.getFirebaseInstance)();
 const signupWithGoogle = async () => {
     try {
