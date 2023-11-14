@@ -8,7 +8,12 @@ export const PlatformError = (error: any) => {
   const message = error.message || error
   console.log(error)
   if (Platform.OS === 'ios' || Platform.OS === 'android') {
-    NativeToast.show({ type: 'error', text1: 'Error', text2: message })
+    // Ensure that 'NativeToast' is defined before calling 'show'
+    if (NativeToast) {
+      NativeToast.show({ type: 'error', text1: 'Error', text2: message })
+    } else {
+      console.warn('NativeToast is not available.')
+    }
   } else {
     reactToast.error(message, { position: 'bottom-center' })
   }

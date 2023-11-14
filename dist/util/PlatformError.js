@@ -13,7 +13,13 @@ const PlatformError = (error) => {
     const message = error.message || error;
     console.log(error);
     if (react_native_1.Platform.OS === 'ios' || react_native_1.Platform.OS === 'android') {
-        react_native_toast_message_1.default.show({ type: 'error', text1: 'Error', text2: message });
+        // Ensure that 'NativeToast' is defined before calling 'show'
+        if (react_native_toast_message_1.default) {
+            react_native_toast_message_1.default.show({ type: 'error', text1: 'Error', text2: message });
+        }
+        else {
+            console.warn('NativeToast is not available.');
+        }
     }
     else {
         react_hot_toast_1.toast.error(message, { position: 'bottom-center' });
