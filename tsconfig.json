@@ -11,6 +11,11 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
   "include": ["src/**/*", "types/**/*", "index.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
