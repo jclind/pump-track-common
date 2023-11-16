@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "pump-track-common/*": ["src/*"]
+      "pump-track-common/*": ["node_modules/pump-track-common/dist/*"]
     },
     "target": "esnext",
     "module": "commonjs",
