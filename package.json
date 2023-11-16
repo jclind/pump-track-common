@@ -12,7 +12,6 @@
     "vp": "npm version patch && npm publish"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "peerDependencies": {
     "react": "^18.2.0"
   },
