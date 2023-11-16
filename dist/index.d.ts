@@ -1,7 +1,3 @@
-import { ENVIRONMENT_KEY_TYPE, FirebaseConfig, FirebaseInstance } from './types';
-export * as tracker from './services/tracker';
-export * as firestore from './services/firestore';
+import { ENVIRONMENT_KEY_TYPE } from './types';
 export declare let ENVIRONMENT_KEY: ENVIRONMENT_KEY_TYPE;
-export declare const pumpTrackSetup: (firebaseConfig: FirebaseConfig, environmentKey: ENVIRONMENT_KEY_TYPE) => Promise<FirebaseInstance>;
 export { useAuthState } from './hooks/useAuthState';
-export * as PlatformError from './util/PlatformError';

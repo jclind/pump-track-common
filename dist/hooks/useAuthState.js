@@ -1,31 +1,38 @@
 "use strict";
+// import { useEffect, useState } from 'react'
+// import { User } from 'firebase/auth'
+// import { getFirebaseInstance } from 'src/services/firestore'
+// import { getUsername, updateUserActivity } from 'src/services/auth'
+// import { PUMP_TRACK_LS_USERNAME } from 'src/services/PUMP_TRACK_LS'
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useAuthState = void 0;
-const react_1 = require("react");
-const firestore_1 = require("src/services/firestore");
-const auth_1 = require("src/services/auth");
-const PUMP_TRACK_LS_1 = require("src/services/PUMP_TRACK_LS");
+// interface AuthState {
+//   user: User | null
+//   loading: boolean
+// }
+// export const useAuthState = (): AuthState => {
+//   const [user, setUser] = useState<User | null>(null)
+//   const [loading, setLoading] = useState(true)
+//   const { auth } = getFirebaseInstance()
+//   useEffect(() => {
+//     const unsubscribe = auth.onAuthStateChanged(userInstance => {
+//       if (userInstance) {
+//         getUsername().then(() => {
+//           setUser(userInstance)
+//           updateUserActivity()
+//         })
+//       } else {
+//         setUser(null)
+//         localStorage.removeItem(PUMP_TRACK_LS_USERNAME)
+//       }
+//       setLoading(false)
+//     })
+//     return () => unsubscribe()
+//     // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [])
+//   return { user, loading }
+// }
 const useAuthState = () => {
-    const [user, setUser] = (0, react_1.useState)(null);
-    const [loading, setLoading] = (0, react_1.useState)(true);
-    const { auth } = (0, firestore_1.getFirebaseInstance)();
-    (0, react_1.useEffect)(() => {
-        const unsubscribe = auth.onAuthStateChanged(userInstance => {
-            if (userInstance) {
-                (0, auth_1.getUsername)().then(() => {
-                    setUser(userInstance);
-                    (0, auth_1.updateUserActivity)();
-                });
-            }
-            else {
-                setUser(null);
-                localStorage.removeItem(PUMP_TRACK_LS_1.PUMP_TRACK_LS_USERNAME);
-            }
-            setLoading(false);
-        });
-        return () => unsubscribe();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    return { user, loading };
+    return 'TESTING';
 };
 exports.useAuthState = useAuthState;
