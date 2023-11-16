@@ -25,6 +25,10 @@
       ]
     }
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./hooks": "./src/index.ts"
+  },
   "dependencies": {
     "firebase": "^10.6.0",
     "react-hot-toast": "^2.4.1",

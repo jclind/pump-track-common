@@ -25,5 +25,5 @@ export let ENVIRONMENT_KEY: ENVIRONMENT_KEY_TYPE = null
 //   }
 // }
 
-export { useAuthState } from './hooks/useAuthState'
+export * from './hooks/useAuthState'
 // export * as PlatformError from './util/PlatformError'
