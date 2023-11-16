@@ -25,5 +25,5 @@ export const pumpTrackSetup = async (
   }
 }
 
-export * as useAuthState from './hooks/useAuthState'
+export { useAuthState } from './hooks/useAuthState'
 export * as PlatformError from './util/PlatformError'

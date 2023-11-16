@@ -40,5 +40,6 @@ const pumpTrackSetup = async (firebaseConfig, environmentKey) => {
     }
 };
 exports.pumpTrackSetup = pumpTrackSetup;
-exports.useAuthState = __importStar(require("./hooks/useAuthState"));
+var useAuthState_1 = require("./hooks/useAuthState");
+Object.defineProperty(exports, "useAuthState", { enumerable: true, get: function () { return useAuthState_1.useAuthState; } });
 exports.PlatformError = __importStar(require("./util/PlatformError"));
