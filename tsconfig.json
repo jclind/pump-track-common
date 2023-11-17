@@ -1,24 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "pump-track-common/*": ["node_modules/pump-track-common/dist/*"]
-    },
-    "target": "esnext",
+    "target": "ES6",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "module": "commonjs",
+    "outDir": "dist",
     "declaration": true,
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
-  },
-  "include": ["src/**/*", "types/**/*", "index.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+    "strict": true
+  }
 }

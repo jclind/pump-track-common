@@ -1,17 +1,14 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFirebaseInstance = exports.initializeFirebase = exports.setFirebaseConfig = void 0;
-const app_1 = __importDefault(require("firebase/compat/app"));
+const app_1 = require("firebase/compat/app");
 require("firebase/compat/auth");
 const storage_1 = require("firebase/storage");
 const firestore_1 = require("firebase/firestore");
 const analytics_1 = require("firebase/analytics");
 const auth_1 = require("firebase/auth");
 const functions_1 = require("firebase/functions");
-const PlatformError_1 = require("src/util/PlatformError");
+const PlatformError_1 = require("../util/PlatformError");
 let firebaseConfig = null;
 let firebaseInstance = null;
 function setFirebaseConfig(config) {

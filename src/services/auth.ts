@@ -13,7 +13,7 @@ import { UserProfileDataType } from '../types'
 import { PUMP_TRACK_LS_USERNAME } from './PUMP_TRACK_LS'
 import { httpsCallable } from 'firebase/functions'
 import { getFirebaseInstance } from './firestore'
-import { PlatformError } from 'src/util/PlatformError'
+import { PlatformError } from '../util/PlatformError'
 
 const { auth, db, firebaseFunctions } = getFirebaseInstance()
 
